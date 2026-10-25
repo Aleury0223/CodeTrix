@@ -1,0 +1,94 @@
+:root { 
+  --neon: #00f0ff; 
+}
+
+.hero-bg {
+  background:
+    radial-gradient(60rem 30rem at 80% 0%, rgba(0,240,255,.10), transparent 60%),
+    linear-gradient(rgba(0,240,255,.04) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(0,240,255,.04) 1px, transparent 1px) 0 0 / 44px 44px;
+}
+
+.btn-neon {
+  background: var(--neon); 
+  color: #03121a;
+  box-shadow: 0 0 22px rgba(0,240,255,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-neon:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 0 34px rgba(0,240,255,.6); 
+}
+
+.card {
+  background: #0b1324; 
+  border: 1px solid #1a2742;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+article.card:hover { 
+  border-color: rgba(0,240,255,.6); 
+  transform: translateY(-4px); 
+  box-shadow: 0 10px 40px rgba(0,240,255,.12); 
+}
+
+.icon-box {
+  width: 3rem; 
+  height: 3rem; 
+  border-radius: .75rem; 
+  display: grid; 
+  place-items: center;
+  color: var(--neon); 
+  background: rgba(0,240,255,.08); 
+  border: 1px solid rgba(0,240,255,.3);
+}
+
+.tab { 
+  color: #94a3b8; 
+  transition: background .2s, color .2s; 
+}
+
+.tab[aria-selected="true"] { 
+  background: var(--neon); 
+  color: #03121a; 
+}
+
+.bar { 
+  background: var(--neon); 
+  transition: width .6s ease; 
+}
+
+#compare[data-state="antes"] .bar { 
+  background: #ff5c7a; 
+}
+
+.float-logo { 
+  animation: float 6s ease-in-out infinite; 
+}
+
+@keyframes float { 
+  50% { transform: translateY(-10px); } 
+}
+
+a:focus-visible, button:focus-visible { 
+  outline: 2px solid var(--neon); 
+  outline-offset: 3px; 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-logo { animation: none; }
+  * { transition: none !important; }
+}
+
+footer .card {
+  position: relative;
+}
+
+footer .card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+}
